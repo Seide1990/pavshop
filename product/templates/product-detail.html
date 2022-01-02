@@ -36,9 +36,9 @@
               <!-- Images Slider -->
               <div class="images-slider">
                 <ul class="slides">
-                  <li data-thumb="{% static ' images/large-img-1.jpg' %}"> <img class="img-responsive" src="{% static ' images/large-img-1.jpg' %}"  alt=""> </li>
-                  <li data-thumb="{% static ' images/large-img-2.jpg' %}"> <img class="img-responsive" src="{% static ' images/large-img-2.jpg' %}"  alt=""> </li>
-                  <li data-thumb="{% static ' images/large-img-3.jpg' %}"> <img class="img-responsive" src="{% static ' images/large-img-3.jpg' %}"  alt=""> </li>
+                  <li data-thumb="{{detail.img1.url}}"> <img class="img-responsive" src="{{detail.img1.url}}"  alt=""> </li>
+                  <li data-thumb="{{detail.img2.url}}"> <img class="img-responsive" src="{{detail.img2.url}}"  alt=""> </li>
+                  <li data-thumb="{{detail.img3.url}}"> <img class="img-responsive" src="{{detail.img3.url}}"  alt=""> </li>
                 </ul>
               </div>
             </div>
@@ -162,7 +162,7 @@
               <div class="media">
                 <div class="media-left"> 
                   <!--  Image -->
-                  <div class="avatar"> <a href="#"> <img class="media-object" src="{% static ' images/avatar-1.jpg' %}" alt=""> </a> </div>
+                  <div class="avatar"> <a href="#"> <img class="media-object" src="{% static 'images/avatar-1.jpg' %}" alt=""> </a> </div>
                 </div>
                 <!--  Details -->
                 <div class="media-body">
@@ -177,7 +177,7 @@
               <div class="media">
                 <div class="media-left"> 
                   <!--  Image -->
-                  <div class="avatar"> <a href="#"> <img class="media-object" src="{% static ' images/avatar-2.jpg' %}" alt=""> </a> </div>
+                  <div class="avatar"> <a href="#"> <img class="media-object" src="{% static 'images/avatar-2.jpg' %}" alt=""> </a> </div>
                 </div>
                 <!--  Details -->
                 <div class="media-body">
@@ -189,8 +189,15 @@
               
               <!-- ADD REVIEW -->
               <h6 class="margin-t-40">ADD REVIEW</h6>
-              <form>
-                <ul class="row">
+              
+                <form method="POST">
+                  {% csrf_token %}
+
+                  {{form.as_p}}
+                  <input type="submit" value="Kaydet" />
+                  
+                 </form>
+              <!--   <ul class="row">
                   <li class="col-sm-6">
                     <label> *NAME
                       <input type="text" value="" placeholder="">
@@ -206,15 +213,14 @@
                       <textarea></textarea>
                     </label>
                   </li>
-                  <li class="col-sm-6"> 
-                    <!-- Rating Stars -->
+                  <
                     <div class="stars"> <span>YOUR RATING</span> <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
                   </li>
                   <li class="col-sm-6">
                     <button type="submit" class="btn btn-dark btn-small pull-right no-margin">POST REVIEW</button>
                   </li>
                 </ul>
-              </form>
+              </form> -->
             </div>
             
             <!-- TAGS -->
@@ -240,11 +246,11 @@
           <!-- Item -->
           <div class="item"> 
             <!-- Item img -->
-            <div class="item-img"> <img class="img-1" src="{% static ' images/product-1.jpg' %}" alt="" > 
+            <div class="item-img"> <img class="img-1" src="{{detail.image1.url}}" alt="" > 
               <!-- Overlay -->
               <div class="overlay">
                 <div class="position-center-center">
-                  <div class="inn"><a href="{% static ' images/product-1.jpg' %}" data-lighter><i class="icon-magnifier"></i></a> <a href="#."><i class="icon-basket"></i></a> <a href="#." ><i class="icon-heart"></i></a></div>
+                  <div class="inn"><a href="{{detail.image1.url}}" data-lighter><i class="icon-magnifier"></i></a> <a href="#."><i class="icon-basket"></i></a> <a href="#." ><i class="icon-heart"></i></a></div>
                 </div>
               </div>
             </div>
@@ -253,16 +259,16 @@
               <p>Lorem ipsum dolor sit amet</p>
             </div>
             <!-- Price --> 
-            <span class="price"><small>$</small>299</span> </div>
+            <span class="price"><small>$</small>{{detail.price}}</span> </div>
           
           <!-- Item -->
           <div class="item"> 
             <!-- Item img -->
-            <div class="item-img"> <img class="img-1" src="{% static ' images/product-2.jpg' %}" alt="" > 
+            <div class="item-img"> <img class="img-1" src="{% static 'images/product-2.jpg' %}" alt="" > 
               <!-- Overlay -->
               <div class="overlay">
                 <div class="position-center-center">
-                  <div class="inn"><a href="{% static ' images/product-2.jpg' %}" data-lighter><i class="icon-magnifier"></i></a> <a href="#."><i class="icon-basket"></i></a> <a href="#." ><i class="icon-heart"></i></a></div>
+                  <div class="inn"><a href="{% static 'images/product-2.jpg' %}" data-lighter><i class="icon-magnifier"></i></a> <a href="#."><i class="icon-basket"></i></a> <a href="#." ><i class="icon-heart"></i></a></div>
                 </div>
               </div>
             </div>
@@ -276,11 +282,11 @@
           <!-- Item -->
           <div class="item"> 
             <!-- Item img -->
-            <div class="item-img"> <img class="img-1" src="{% static ' images/product-3.jpg' %}" alt="" > 
+            <div class="item-img"> <img class="img-1" src="{% static 'images/product-3.jpg' %}" alt="" > 
               <!-- Overlay -->
               <div class="overlay">
                 <div class="position-center-center">
-                  <div class="inn"><a href="{% static ' images/product-3.jpg' %}" data-lighter><i class="icon-magnifier"></i></a> <a href="#."><i class="icon-basket"></i></a> <a href="#." ><i class="icon-heart"></i></a></div>
+                  <div class="inn"><a href="{% static 'images/product-3.jpg' %}" data-lighter><i class="icon-magnifier"></i></a> <a href="#."><i class="icon-basket"></i></a> <a href="#." ><i class="icon-heart"></i></a></div>
                 </div>
               </div>
             </div>
@@ -294,11 +300,11 @@
           <!-- Item -->
           <div class="item"> 
             <!-- Item img -->
-            <div class="item-img"> <img class="img-1" src="{% static ' images/product-4.jpg' %}" alt="" > 
+            <div class="item-img"> <img class="img-1" src="{% static 'images/product-4.jpg' %}" alt="" > 
               <!-- Overlay -->
               <div class="overlay">
                 <div class="position-center-center">
-                  <div class="inn"><a href="{% static ' images/product-4.jpg' %}" data-lighter><i class="icon-magnifier"></i></a> <a href="#."><i class="icon-basket"></i></a> <a href="#." ><i class="icon-heart"></i></a></div>
+                  <div class="inn"><a href="{% static 'images/product-4.jpg' %}" data-lighter><i class="icon-magnifier"></i></a> <a href="#."><i class="icon-basket"></i></a> <a href="#." ><i class="icon-heart"></i></a></div>
                 </div>
               </div>
             </div>
