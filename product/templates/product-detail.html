@@ -36,23 +36,26 @@
               <!-- Images Slider -->
               <div class="images-slider">
                 <ul class="slides">
-                  <li data-thumb="{{detail.img1.url}}"> <img class="img-responsive" src="{{detail.img1.url}}"  alt=""> </li>
-                  <li data-thumb="{{detail.img2.url}}"> <img class="img-responsive" src="{{detail.img2.url}}"  alt=""> </li>
-                  <li data-thumb="{{detail.img3.url}}"> <img class="img-responsive" src="{{detail.img3.url}}"  alt=""> </li>
+                  {% for i in image %}
+                  <li data-thumb="{{i.img.url}}"> <img class="img-responsive" src="{{i.img.url}}"  alt=""> </li>
+                  {% endfor %}
+                  
+
+
                 </ul>
               </div>
             </div>
             
             <!-- COntent -->
             <div class="col-md-5">
-              <h4>wood chair</h4>
+              <h4>{{detail.name}}</h4>
               <span class="price"><small>$</small>299</span> 
               
               <!-- Sale Tags -->
               <div class="on-sale"> 10% <span>OFF</span> </div>
               <ul class="item-owner">
-                <li>Designer :<span> ABC Art</span></li>
-                <li>Brand:<span> LimeWood</span></li>
+                <li>Designer :<span> {{detail.designer}}</details></span></li>
+                <li>Brand:<span>{{detail.brand}}</span></li>
               </ul>
               
               <!-- Item Detail -->
@@ -64,11 +67,13 @@
                   <li class="col-xs-4">
                     <div class="quinty"> 
                       <!-- QTY -->
+                     
+                     
                       <select class="selectpicker">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
+                        <option>{{detail.count}}</option>
+                    
                       </select>
+                     
                     </div>
                   </li>
                   
@@ -97,7 +102,7 @@
                 <!-- INFOMATION -->
                 <div class="inner-info">
                   <h6>DELIVERY INFORMATION</h6>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum finibus ligula a scelerisque gravida. Nullam laoreet tortor ac maximus alique met, consectetur adipiscing elit. </p>
+                  <p>{{detail.informations}} </p>
                   <h6>SHIPPING & RETURNS</h6>
                   <h6>SHARE THIS PRODUCT</h6>
                   

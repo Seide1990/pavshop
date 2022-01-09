@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from .forms import Comment_pro
 
-from product.models import Product
+from product.models import  Image_model, Product
+#from product.models import Image_models
 from django.http import HttpResponseRedirect
 
 
@@ -9,13 +10,13 @@ from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 # Create your views here.
 def product_detail(request,id):
     detail = Product.objects.get(id=id)
-
-   
-    context={'detail':detail}
+    image=Image_model.objects.filter(product_id=id)
+    print(image)
+    context={'image':image ,'detail':detail}
     return render(request,'product-detail.html',context)
 
 def product_list(request):
-    contact_list = Product.objects.all()
+    contact_list =Product.objects.all()
     paginator = Paginator(contact_list, 1) 
 
     page = request.GET.get('page')

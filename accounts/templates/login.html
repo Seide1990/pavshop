@@ -35,8 +35,9 @@
               <!-- ESTIMATE SHIPPING & TAX -->
               <div class="col-sm-7">
                 <h6>LOGIN YOUR ACCOUNT</h6>
+                
                 <form method="post" enctype='multipart/form-data'>
-                  
+                 
                   <ul class="row">
                     {% csrf_token %}
                     {{ form.non_field_errors }}
@@ -59,7 +60,7 @@
                     <li class="col-md-4">
                       <button type="submit" class="btn">LOGIN</button>
                     </li>
-                    
+                  
                     <!-- CREATE AN ACCOUNT -->
                     <li class="col-md-4">
                       <div class="checkbox margin-0 margin-top-20">

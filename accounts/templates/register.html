@@ -41,17 +41,18 @@
                   <ul class="row">
                     {% csrf_token %}
                     <!-- Name -->
-                    <li class="col-md-6">
+                    
                       {{ form.non_field_errors }}
                       {% for field in form %}
-                      <div class="form-group">
-                          {{ field }}
+                      
+                        <li class="col-md-6">
+                          {{ field }}  
                           {% for error in field.errors %}
                               <li class="alert-danger alert">{{ error }}</li>
-                          {% endfor %}
-                      </div>
+                          {% endfor %}</li>
+                     
                       {% endfor %}
-                   
+                      
                     <!-- PHONE -->
                     <li class="col-md-6">
                       <button type="submit" class="btn">REGISTER NOW</button>

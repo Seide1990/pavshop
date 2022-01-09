@@ -1,5 +1,6 @@
 
 {% load static %}
+{% block content %}
 <div id="wrap"> 
   
   <!-- header -->
@@ -54,7 +55,11 @@
                 </li>
                 <li><a href="#">MY CART</a></li>
                 <li><a href="#">ACCOUNT INFO</a></li>
-                <li><a href="#">LOG OUT</a></li>
+               {% if user.is_authenticated %}
+                      <li><a href="{% url 'accounts:logout' %}">LOG OUT</a></li>
+                     {% else %}
+                     <li><a href="{% url 'accounts:login' %}">LOG IN</a></li>
+               {% endif %}
               </ul>
             </li>
             
@@ -109,4 +114,4 @@
     </div>
   </div>
 </header>
-                       
+{% endblock %}

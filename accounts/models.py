@@ -21,8 +21,8 @@ class User(AbstractUser):
     city=models.CharField(max_length=127,null=True,blank=True,default='Baki')
   #  country=models.ForeignKey('Countries',on_delete=models.CASCADE,null=True, related_name='Countries')
   #  city=models.ForeignKey('Town',on_delete=models.CASCADE,null=True, related_name='Towns')
-
-
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['username']
 #class Countries(models.Model):
  #   country=models.CharField(max_length=127,null=True,blank=True, default='Azerbaidjan')
   #  def __str__(self):

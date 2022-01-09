@@ -35,18 +35,22 @@ def login(request):
     form = LoginForm()
     if request.method == 'POST':
         form = LoginForm(data=request.POST)
-        
+        print('seide')
         if form.is_valid():
             print('delta')
             email = form.cleaned_data.get('email')
             password = form.cleaned_data.get('password')
             user = authenticate(username=email, password=password)
             if user:
+                print('davam')
                 django_login(request, user)
                 messages.success(request, 'Siz ugurla login oldunuz')
-                return redirect(reverse_lazy('home:index'))
+                mesaj_et='Siz login oldunuz'
+                return redirect(reverse_lazy('home:index'),mesaj_et)
                 
             else:
+                print('yalnis')
+                
                 messages.success(request, 'Siz login ola bilmediniz')
 
     context = {
@@ -72,3 +76,8 @@ def activate(request, uidb64, token):
     else:
         messages.error(request, 'Email is not activated')
         return redirect(reverse_lazy('accounts:register'))
+@login_required
+def logout(request):
+    django_logout(request)
+    
+    return redirect(reverse_lazy('accounts:login'))
