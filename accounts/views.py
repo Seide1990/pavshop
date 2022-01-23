@@ -1,3 +1,6 @@
+from django.shortcuts import render
+
+# Create your views here.
 from django.core.mail.message import sanitize_address
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy

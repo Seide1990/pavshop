@@ -1,5 +1,5 @@
 
-{% load static %}
+{% load static i18n %}
 {% block content %}
 <div id="wrap"> 
   
@@ -50,9 +50,11 @@
             <!-- USER INFO -->
             <li class="dropdown user-acc"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" ><i class="icon-user"></i> </a>
               <ul class="dropdown-menu">
+                 {% if user.is_authenticated %}
                 <li>
-                  <h6>HELLO! Jhon Smith</h6>
+                  <h6> {% trans 'HELLO!' %}   {{user.username}}</h6>
                 </li>
+                {% endif %}
                 <li><a href="#">MY CART</a></li>
                 <li><a href="#">ACCOUNT INFO</a></li>
                {% if user.is_authenticated %}
