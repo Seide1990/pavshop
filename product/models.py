@@ -2,6 +2,11 @@ from django.db import models
 from django.db.models.aggregates import Count
 from django.utils.text import slugify
 # Create your models here.
+
+
+
+
+
 class Product(models.Model):
     image1=models.ImageField(upload_to='media/',null=True, blank=True)
 

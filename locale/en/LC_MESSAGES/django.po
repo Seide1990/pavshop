@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-23 12:38+0400\n"
+"POT-Creation-Date: 2022-01-24 02:17+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,11 +20,11 @@ msgstr ""
 
 #: .\accounts\forms.py:15
 msgid "Password"
-msgstr "sifre"
+msgstr ""
 
 #: .\accounts\forms.py:21
 msgid "Password confirmation"
-msgstr "sifrenin tekrari"
+msgstr ""
 
 #: .\accounts\forms.py:24
 msgid "Enter the same password as before, for verification."
@@ -32,6 +32,54 @@ msgstr ""
 
 #: .\accounts\models.py:16
 msgid "email address"
+msgstr ""
+
+#: .\home\templates\includes\navbar.html:22
+msgid "Home"
+msgstr ""
+
+#: .\home\templates\includes\navbar.html:29
+msgid "Contact"
+msgstr ""
+
+#: .\home\templates\includes\navbar.html:31
+msgid "About"
+msgstr ""
+
+#: .\home\templates\includes\navbar.html:32
+msgid "PRODUCT"
+msgstr ""
+
+#: .\home\templates\includes\navbar.html:35
+msgid "Designer"
+msgstr ""
+
+#: .\home\templates\includes\navbar.html:41
+msgid "store"
+msgstr ""
+
+#: .\home\templates\includes\navbar.html:46
+msgid "contact"
+msgstr ""
+
+#: .\home\templates\includes\navbar.html:57
+msgid "HELLO!"
+msgstr "Salam!"
+
+#: .\home\templates\includes\navbar.html:60
+msgid "MY CART"
+msgstr ""
+
+#: .\home\templates\includes\navbar.html:61
+msgid "ACCOUNT INFO"
+msgstr ""
+
+#: .\home\templates\includes\navbar.html:63
+msgid "LOG OUT"
+msgstr ""
+
+#: .\home\templates\includes\navbar.html:65
+msgid "LOG IN"
 msgstr ""
 
 #: .\ilk_layihem\settings.py:143

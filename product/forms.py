@@ -1,7 +1,17 @@
 from django import forms
-from product.models import Comment_model
+from django.contrib.auth import get_user_model
+from django.contrib.auth import password_validation
+from django.db import models
+from django.forms import ModelForm
+from django.contrib.auth.password_validation import validate_password
+from django.utils.translation import gettext, gettext_lazy as _
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
-class Comment_pro(forms.ModelForm):
-      name = forms.CharField(required=False)
-      email = forms.EmailField(label='Your email')  
-      message = forms.CharField(widget=forms.Textarea)
+#class ShopCartForm(ModelForm):
+    
+#    class Meta:
+#        model=ShopCart
+#        fields=['quantity']
+#        Widgets={
+#            'quantity': forms.TextInput(),
+ #       }

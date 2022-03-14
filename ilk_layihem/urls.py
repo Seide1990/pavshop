@@ -17,7 +17,7 @@ urlpatterns += i18n_patterns(
     path('social-auth/', include('social_django.urls', namespace="social")),
     path('accounts/', include('accounts.urls', namespace='accounts')),
     path('', include('home.urls', namespace='home')),
-    
+    #path('order/', include('order.urls', namespace='order')),
     path('blog/', include('blog.urls', namespace='blog')),
     path('product/', include('product.urls', namespace='product')),
    )

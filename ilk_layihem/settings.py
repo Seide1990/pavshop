@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'contact',
     'product',
     'accounts',
+    'order',
    # 'social.apps.django_app.default'
     'social_django',  #facebookla login olmaq ucun applerden sonra yazilmalidir
 

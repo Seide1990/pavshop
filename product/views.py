@@ -1,9 +1,11 @@
 from django.shortcuts import render
-from .forms import Comment_pro
+#from .forms import Comment_pro
 
 from product.models import  Image_model, Product
 #from product.models import Image_models
 from django.http import HttpResponseRedirect
+#from order.models import ShopCart
+#from product.forms import  ShopCartForm
 
 
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
@@ -14,6 +16,7 @@ def product_detail(request,id):
     print(image)
     context={'image':image ,'detail':detail}
     return render(request,'product-detail.html',context)
+
 
 def product_list(request):
     contact_list =Product.objects.all()
@@ -45,3 +48,4 @@ def comment(request):
     else:
         form = Comment_pro()
     return render(request,'product_detail.html',{'form':form})
+

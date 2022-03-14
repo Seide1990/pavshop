@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-23 12:37+0400\n"
+"POT-Creation-Date: 2022-01-24 02:16+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,6 +33,56 @@ msgstr ""
 #: .\accounts\models.py:16
 msgid "email address"
 msgstr ""
+
+#: .\home\templates\includes\navbar.html:22
+msgid "Home"
+msgstr "Ev"
+
+#: .\home\templates\includes\navbar.html:29
+msgid "Contact"
+msgstr "Əlaqə"
+
+#: .\home\templates\includes\navbar.html:31
+msgid "About"
+msgstr "Haqqinda"
+
+#: .\home\templates\includes\navbar.html:32
+msgid "PRODUCT"
+msgstr "MƏHSUL"
+
+#: .\home\templates\includes\navbar.html:35
+msgid "Designer"
+msgstr "dizayner"
+
+#: .\home\templates\includes\navbar.html:41
+msgid "store"
+msgstr "Mağaza"
+
+#: .\home\templates\includes\navbar.html:46
+#, fuzzy
+#| msgid "Contact"
+msgid "contact"
+msgstr "Əlaqə"
+
+#: .\home\templates\includes\navbar.html:57
+msgid "HELLO!"
+msgstr "SALAM!"
+
+#: .\home\templates\includes\navbar.html:60
+msgid "MY CART"
+msgstr "MƏNİM KARTIM"
+
+#: .\home\templates\includes\navbar.html:61
+msgid "ACCOUNT INFO"
+msgstr "HESAB MƏLUMATI"
+
+#: .\home\templates\includes\navbar.html:63
+msgid "LOG OUT"
+msgstr "ÇIXIŞ"
+
+#: .\home\templates\includes\navbar.html:65
+msgid "LOG IN"
+msgstr "DAXİL OL"
 
 #: .\ilk_layihem\settings.py:143
 msgid "English"
