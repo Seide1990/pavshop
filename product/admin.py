@@ -9,5 +9,7 @@ admin.site.register(Comment_model)
 
 from .models import Image_model
 admin.site.register(Image_model)
+from .models import ShopCart
+admin.site.register(ShopCart)
 
 

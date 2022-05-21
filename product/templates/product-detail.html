@@ -67,21 +67,35 @@
                 <ul class="row margin-top-30">
                   <li class="col-xs-4">
                     <div class="quinty"> 
-                      <form method="post" enctype='order/shopping_cart'>
+     <!--               <form method="post" enctype='multipart/form-data' action="product/shopping_cart/">
 
                         {% csrf_token %} 
-         <div id="menu">    
-    
+                        {% for field in form %}
+     
+    {{field}}<div>
+  <button type=submit > yukleartik </button>
 </div>
-<div>
-  <button type=submit value="" name="ad" id="ad"> addtocart </button>
-</div>
+    {% endfor %} </form>
+ -->  
 
- 
+     
+      <form  method="POST"   >
+        {% csrf_token %}
+    
+            {% for field in form %}
+            
+            <div class="form-group ">
+                {{ field}}
+            </div>
+            
+            {% endfor %}
+    
+            <input  value="Submit" type="submit"  >
+
 </form>
 
 
-
+<!--action="{% url 'product:shopping_cart' detail.id  %}" -->
 
                          <!-- Buraya ul li kodları eklenecek  
                             <select  class="selectpicker">

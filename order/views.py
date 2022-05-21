@@ -8,8 +8,7 @@ from django.http import HttpResponseRedirect
 import re
 from django.http import request
 from django.shortcuts import redirect, render
-from order.models import ShopCart
-from product.forms import  ShopCartForm
+
 from django.urls import reverse_lazy
 
 # Create your views here.
@@ -24,10 +23,7 @@ from django.urls import reverse_lazy
   #      return render(request,'sopping-cart.html')
   #  return render(request,'product-detail.html',{'form':form})
 
-def addtocart(request,id):
-    detail = ShopCart.objects.get(id=id)
-    context={'detail':detail}
-    return render(request,'shopping-cart.html',context)
+
         
 #@login_required(login_url='/login')
 #def shop_cart_add(request,proid):
@@ -65,4 +61,4 @@ def shop_cart_list(request):
     context={ 'pace':'cart',
     'shopcart':'shopcart',
 
-
+    }

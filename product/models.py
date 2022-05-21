@@ -2,7 +2,17 @@ from django.db import models
 from django.db.models.aggregates import Count
 from django.utils.text import slugify
 # Create your models here.
+class ShopCart(models.Model):
+       title=models.CharField(max_length=100, blank=True, null=True)
+       cart_id = models.CharField(max_length=100)
+       quantity=models.IntegerField(default=1)
+   # full_name = models.CharField(max_length=100, blank=True, null=True)
+   # email = models.CharField(max_length=100, blank=True, null=True)
+   # message = models.TextField()
+   # subject = models.CharField(max_length=100,)
 
+      # def __str__(self):
+      #      return self.quantity
 
 
 

@@ -30,14 +30,5 @@ class shoppingCart(models.Model):
     def __str__(self):
     
         return self.user.email
-#class ShopCart(models.Model):
- #   user=models.ForeignKey(to=settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)
-   # product=models.OneToOneField(Product, on_delete=models.SET_NULL, null=True)
-  #  quantity=models.IntegerField()
-   # name=models.CharField(max_length=155)
-   # price=models.CharField(max_length=155,default='299$')
-   # def __str__(self):
-   #     return self.product
-   # @property
-   # def amount(self):
-   #     return (self.quantity*self.product.price)
+
+        
