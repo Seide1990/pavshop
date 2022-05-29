@@ -122,17 +122,10 @@
               <!-- Category -->
               <h5 class="shop-tittle margin-bottom-30">category</h5>
               <ul class="shop-cate">
-                <li><a href="#."> Chair <span>24</span></a></li>
-                <li><a href="#."> Bag <span>122</span></a></li>
-                <li><a href="#."> Soffa <span>09</span></a></li>
-                <li><a href="#."> Bed <span>12</span></a></li>
-                <li><a href="#."> Shoes <span>98</span></a></li>
-                <li><a href="#."> Table <span>34</span></a></li>
-                <li><a href="#."> Bedsheets <span>23</span></a></li>
-                <li><a href="#."> Curtains <span>43</span></a></li>
-                <li><a href="#."> TV Cabinets <span>12</span></a></li>
-                <li><a href="#."> Clocks <span>18</span></a></li>
-                <li><a href="#."> Towels <span>25</span></a></li>
+                {% for category in categories %}
+                <li><a href="{% url 'product:product_category' category.slug  %}"> {{category.name}} <span>1</span></a></li>
+                {% endfor %}
+               
               </ul>
               
               <!-- FILTER BY PRICE -->
@@ -178,11 +171,9 @@
               <!-- BRAND -->
               <h5 class="shop-tittle margin-top-60 margin-bottom-30">brands</h5>
               <ul class="shop-cate">
-                <li><a href="#."> G-Furniture
-                  BigYellow</a></li>
-                <li><a href="#."> WoodenBazaar</a></li>
-                <li><a href="#."> GreenWoods</a></li>
-                <li><a href="#."> Hot-n-Fire </a></li>
+                {% for brnd in brand %}
+                <li><a href="{% url 'product:product_brand' brnd.slug  %}"> {{brnd.name}}</a></li>
+                {% endfor %}
               </ul>
               
               <!-- SIDE BACR BANER -->

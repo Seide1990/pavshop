@@ -12,4 +12,7 @@ admin.site.register(Image_model)
 from .models import ShopCart
 admin.site.register(ShopCart)
 
-
+from .models import Category
+admin.site.register(Category)
+from .models import Brand
+admin.site.register(Brand)

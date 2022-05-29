@@ -10,7 +10,7 @@ from product.models import  Image_model, Product
 #from product.models import Image_models
 from django.http import HttpResponseRedirect
 
-from .models import ShopCart
+from .models import ShopCart,Category,Brand
 from .forms import  ShopCartForm
 
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
@@ -35,7 +35,10 @@ def product_detail(request,id):
        
        # print(info)
         if form.is_valid():
-            form=ShopCartForm(request.POST,instance=info)
+           form=ShopCartForm(request.POST,instance=info)
+           
+           detail = Product.objects.get(id=id)
+           form1=ShopCartForm(request.POST,instance=info)
           #  list = ShopCart(
             #    # quantity=quantity,
             #     title='seide',
@@ -44,7 +47,7 @@ def product_detail(request,id):
        # )
          #   list.save()
              
-            form.save()  
+        form.save()  
        # 
         return render(request,'shopping-cart.html')
         
@@ -67,8 +70,36 @@ def addtocart(request,id):
     seide='salam necesen'
     context={'form':form,'seide':seide}
     return render(request,'product-list.html',context)
+
+def product_category(request,Category_slug):
+    print('bura geldi')
+    #contact_list =Product.objects.all()
+    categories =Category.objects.all()
+    brand =Brand.objects.all()
+    contact_list =Product.objects.all().filter(Category__slug=Category_slug)
+    paginator = Paginator(contact_list, 1) 
+
+    page = request.GET.get('page')
+    try:
+        product = paginator.page(page)
+    except PageNotAnInteger:
+        product = paginator.page(1)
+    except EmptyPage:
+        product = paginator.page(paginator.num_pages)
+    categories =Category.objects.all()
+   
+    
+    context={'categories':categories , 
+             'product':product,
+             'brand':brand  }
+    print('bura catib')
+    return render(request,'product-list.html',context)
+
+
 def product_list(request):
     contact_list =Product.objects.all()
+    categories =Category.objects.all()
+    brand =Brand.objects.all()
     paginator = Paginator(contact_list, 1) 
 
     page = request.GET.get('page')
@@ -90,7 +121,28 @@ def product_list(request):
    # context={'form':form,'seide':seide,'product':product}
  # action="{% url 'product:shopping_cart' mehsul.id  %}"
     
-    context={'product':product}
+    context={'product':product , 
+             'categories':categories,
+             'brand':brand }
+    return render(request,'product-list.html',context)
+
+def product_brand(request,brand_slug):
+    categories =Category.objects.all()
+    brand =Brand.objects.all()
+    contact_list =Product.objects.all().filter(brand__slug=brand_slug)
+    paginator = Paginator(contact_list, 1) 
+
+    page = request.GET.get('page')
+    try:
+        product = paginator.page(page)
+    except PageNotAnInteger:
+        product = paginator.page(1)
+    except EmptyPage:
+        product = paginator.page(paginator.num_pages)
+    categories =Category.objects.all()
+    context={'categories':categories ,
+              'product':product,
+              'brand':brand   }
     return render(request,'product-list.html',context)
 
 def shopping_cart(request):
